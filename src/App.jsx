@@ -720,7 +720,6 @@ export default function Fallos() {
   const [expandedId, setExpandedId] = useState(null);
   const [resumenId, setResumenId] = useState(null);
   const [showChapters, setShowChapters] = useState(false);
-  const listRef = useRef(null);
 
   const filtered = useMemo(() => {
     return CASES.filter(c => {
@@ -732,12 +731,12 @@ export default function Fallos() {
     });
   }, [search, category, chapterFilter]);
 
-  useEffect(() => { if (listRef.current) listRef.current.scrollTop = 0; }, [search, category, chapterFilter]);
+  useEffect(() => { window.scrollTo(0, 0); }, [search, category, chapterFilter]);
 
   return (
     <div style={{minHeight:"100vh",background:"#F6F6F9",fontFamily:"'DM Sans',sans-serif"}}>
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
-      <div style={{position:"sticky",top:0,zIndex:10,background:"#F6F6F9",paddingBottom:6}}>
+      <div style={{background:"#F6F6F9"}}>
         <div style={{padding:"24px 20px 0"}}>
           <h1 style={{fontFamily:"'Source Serif 4','Georgia',serif",fontSize:30,fontWeight:700,color:"#1a1a2e",margin:"0 0 4px"}}>Fallos</h1>
           <p style={{fontSize:14,color:"#8b8b9e",margin:"0 0 16px"}}>Jurisprudencia resumida para estudiar · <span style={{fontWeight:600,color:"#6b6b80"}}>{filtered.length}</span> {filtered.length===1?"caso":"casos"}</p>
@@ -767,9 +766,9 @@ export default function Fallos() {
             </div>
           )}
         </div>
-        <div style={{height:1,background:"linear-gradient(90deg,transparent,#dddde3,transparent)",margin:"0 20px"}}/>
+        <div style={{height:1,background:"linear-gradient(90deg,transparent,#dddde3,transparent)",margin:"16px 20px 0"}}/>
       </div>
-      <div ref={listRef} style={{padding:"14px 16px 40px"}}>
+      <div style={{padding:"14px 16px 40px"}}>
         {filtered.length===0?(
           <div style={{textAlign:"center",padding:"48px 20px",color:"#9b9bae"}}>
             <p style={{fontSize:16,margin:"0 0 6px"}}>No se encontraron fallos</p>
