@@ -738,6 +738,7 @@ export default function Fallos() {
       <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
       <div style={{background:"#F6F6F9"}}>
         <div style={{padding:"24px 20px 0"}}>
+          <p style={{fontFamily:"'DM Sans',sans-serif",fontSize:11,fontWeight:700,color:"#1A56DB",letterSpacing:"0.1em",textTransform:"uppercase",margin:"0 0 6px",lineHeight:1.4}}>Principios Generales de Derecho Privado (89) · Cátedra Genovesi</p>
           <h1 style={{fontFamily:"'Source Serif 4','Georgia',serif",fontSize:30,fontWeight:700,color:"#1a1a2e",margin:"0 0 4px"}}>Fallos</h1>
           <p style={{fontSize:14,color:"#8b8b9e",margin:"0 0 16px"}}>Jurisprudencia resumida para estudiar · <span style={{fontWeight:600,color:"#6b6b80"}}>{filtered.length}</span> {filtered.length===1?"caso":"casos"}</p>
           <div style={{position:"relative",marginBottom:12}}>
